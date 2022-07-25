@@ -1,7 +1,7 @@
 # API demo
 ## Description
 An API desgined in LUMEN to perform CRUD operation on a database.
-Unit tests are included.
+Unit tests are included. This project includes swagger for API testing.
 
 It uses an Auth0 token for authentication
 
@@ -20,6 +20,10 @@ This could be extended (based on your business strategy) to:
 - Composer 2.0
 
 After configuration, clone this project to your htdocs folder
+
+To test the API with swagger
+- start your local server
+- type the url https://localhost:8000/api/documentation
 
 ### Database
 Database file attached

@@ -1,0 +1,225 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "STUDENT-API-V2",
+        "description": "This is an API that performs CRUD operations on student entity",
+        "contact": {
+            "name": "Developer",
+            "email": "tester3922106@gmail.com"
+        },
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/v1/student": {
+            "get": {
+                "tags": [
+                    "Student Data"
+                ],
+                "operationId": "/api/v1/student",
+                "responses": {
+                    "200": {
+                        "description": "Returns all student data"
+                    }
+                }
+            }
+        },
+        "/api/v1/createstudent": {
+            "post": {
+                "tags": [
+                    "New Student Data"
+                ],
+                "operationId": "/api/v1/createstudent",
+                "parameters": [
+                    {
+                        "name": "firstname",
+                        "in": "query",
+                        "description": "The firstname parameter in query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "surname",
+                        "in": "query",
+                        "description": "The surname parameter in query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "identificationno",
+                        "in": "query",
+                        "description": "The identification no parameter in query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "in": "query",
+                        "description": "The country parameter in query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "dateofbirth",
+                        "in": "query",
+                        "description": "The date of birth parameter in query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "registeredon",
+                        "in": "query",
+                        "description": "The registerd on date parameter in query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns all student data"
+                    }
+                }
+            }
+        },
+        "/api/v1/showstudent/{id}": {
+            "get": {
+                "tags": [
+                    "Show Selected Student Data"
+                ],
+                "operationId": "/api/v1/showstudent/{id}",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The id parameter in path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns some sample category things",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Error: Bad request. When required parameters were not supplied."
+                    }
+                }
+            }
+        },
+        "/api/v1/editstudent/{id}": {
+            "put": {
+                "tags": [
+                    "Update Student Data"
+                ],
+                "operationId": "/api/v1/editstudent/{id}",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The id parameter to search",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "firstname",
+                        "in": "query",
+                        "description": "The firstname parameter in query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "surname",
+                        "in": "query",
+                        "description": "The surname parameter in query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "country",
+                        "in": "query",
+                        "description": "The country parameter in query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "dateofbirth",
+                        "in": "query",
+                        "description": "The date of birth parameter in query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "registeredon",
+                        "in": "query",
+                        "description": "The registerd on date parameter in query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns all student data"
+                    }
+                }
+            }
+        },
+        "/api/v1/deletestudent/{id}": {
+            "delete": {
+                "tags": [
+                    "Delete Selected Student Data"
+                ],
+                "operationId": "/api/v1/deletestudent/{id}",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "The id parameter to search",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Delete student data"
+                    }
+                }
+            }
+        }
+    }
+}

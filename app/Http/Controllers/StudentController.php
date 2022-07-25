@@ -20,7 +20,19 @@ class StudentController extends Controller
         $db = DB::connection()->getPdo();
         $this->db =$db;
     }
-    
+    /**
+     * @OA\Get(
+     *     path="/api/v1/student",
+     *     operationId="/api/v1/student",
+     *     tags={"Student Data"},
+     *     @OA\Response(
+     *         response="200",
+     *         description="Returns all student data",
+     *         @OA\Schema(type="string")
+     *         )
+     *     ),
+     * )
+     */
      public function index()
      {
      
@@ -34,7 +46,67 @@ class StudentController extends Controller
         ], 200);
 
      }
-
+    /**   
+     * @OA\Post(
+     *     path="/api/v1/createstudent",
+     *     operationId="/api/v1/createstudent",
+     *     tags={"New Student Data"},
+     *     @OA\Parameter(
+     *         name="firstname",
+     *         in="query",
+     *         description="The firstname parameter in query",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Parameter(
+     *         name="surname",
+     *         in="query",
+     *         description="The surname parameter in query",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Parameter(
+     *         name="identificationno",
+     *         in="query",
+     *         description="The identification no parameter in query",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Parameter(
+     *         name="country",
+     *         in="query",
+     *         description="The country parameter in query",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Parameter(
+     *         name="dateofbirth",
+     *         in="query",
+     *         description="The date of birth parameter in query",
+     *         required=true,
+     *         @OA\Schema(
+     *            type="string",
+     *            format="date",
+     *         )
+     *     ),
+     *     @OA\Parameter(
+     *         name="registeredon",
+     *         in="query",
+     *         description="The registerd on date parameter in query",
+     *         required=true,
+     *         @OA\Schema(
+     *            type="string",
+     *            format="date",
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response="200",
+     *         description="Returns all student data",
+     *         @OA\Schema(type="string")
+     *         )
+     *     ),
+     * )    
+     */
      public function create(Request $request)
      {
         $tomorrow = Carbon::tomorrow();
@@ -81,7 +153,29 @@ class StudentController extends Controller
                 ]);
             }
      }
-
+      /**
+     * @OA\Get(
+     *     path="/api/v1/showstudent/{id}",
+     *     operationId="/api/v1/showstudent/{id}",
+     *     tags={"Show Selected Student Data"},
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="The id parameter in path",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Response(
+     *         response="200",
+     *         description="Returns some sample category things",
+     *         @OA\JsonContent()
+     *     ),
+     *     @OA\Response(
+     *         response="401",
+     *         description="Error: Bad request. When required parameters were not supplied.",
+     *     ),
+     * )
+     */
      public function show($id)
      {
         if(!is_numeric($id)){
@@ -107,7 +201,67 @@ class StudentController extends Controller
         ], 401);
        
      }
-
+      /**   
+     * @OA\Put(
+     *     path="/api/v1/editstudent/{id}",
+     *     operationId="/api/v1/editstudent/{id}",
+     *     tags={"Update Student Data"},
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="The id parameter to search",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Parameter(
+     *         name="firstname",
+     *         in="query",
+     *         description="The firstname parameter in query",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Parameter(
+     *         name="surname",
+     *         in="query",
+     *         description="The surname parameter in query",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),    
+     *     @OA\Parameter(
+     *         name="country",
+     *         in="query",
+     *         description="The country parameter in query",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Parameter(
+     *         name="dateofbirth",
+     *         in="query",
+     *         description="The date of birth parameter in query",
+     *         required=true,
+     *         @OA\Schema(
+     *            type="string",
+     *            format="date",
+     *         )
+     *     ),
+     *     @OA\Parameter(
+     *         name="registeredon",
+     *         in="query",
+     *         description="The registerd on date parameter in query",
+     *         required=true,
+     *         @OA\Schema(
+     *            type="string",
+     *            format="date",
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response="200",
+     *         description="Returns all student data",
+     *         @OA\Schema(type="string")
+     *         )
+     *     ),
+     * )    
+     */
      public function update(Request $request)
      { 
         $tomorrow = Carbon::tomorrow();
@@ -148,7 +302,26 @@ class StudentController extends Controller
                ]);
            }         
      }
-
+      /**   
+     * @OA\Delete(
+     *     path="/api/v1/deletestudent/{id}",
+     *     operationId="/api/v1/deletestudent/{id}",
+     *     tags={"Delete Selected Student Data"},
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="The id parameter to search",
+     *         required=true,
+     *         @OA\Schema(type="string")
+     *     ),         
+     *     @OA\Response(
+     *         response="200",
+     *         description="Delete student data",
+     *         @OA\Schema(type="string")
+     *         )
+     *     ),
+     * )    
+     */
      public function destroy($id)
      {      
         if(!is_numeric($id)){

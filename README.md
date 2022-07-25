@@ -1,23 +1,33 @@
-# Lumen PHP Framework
+# API demo
+## Description
+An API desgined in LUMEN to perform CRUD operation on a database with a Swagger files to test the API
+Unit tests are included.
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/lumen-framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/lumen-framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/lumen)](https://packagist.org/packages/laravel/lumen-framework)
+It uses an Auth0 token for authentication
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+This could be extended (based on your business strategy) to:
+- allow the scanning, uploading and attaching other documents like proof od ID's or ceetificates 
+- include other tables like a user table 
+- allow permissions could be added for users of the system in the auth0 account
+- include blank fields (maybe 3) for future expansion 
+- to search by additional fields like firstname, surname etc
 
-## Official Documentation
+## Installation Requirements
+- PHP 8.0 
+- Lumen 9.0
+- MySQL
+- Xampp
+- Composer 2.0
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+After configuration, clone this project to your htdocs folder
 
-## Contributing
+To test the API in Swagger, 
+- start your local server 
+- type http://localhost:8000/api/documentation   in your browser address bar
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+### Database
+Database file attached
+[school.zip](https://github.com/Ebow09/API_v1_repo/files/9133381/school.zip)
 
 ## License
 

@@ -25,6 +25,7 @@ After configuration, clone this project to your htdocs folder
 To test the API with swagger
 - start your local server
 - type the url https://localhost:8000/api/documentation
+<img width="740" alt="Swagger screenshot" src="https://user-images.githubusercontent.com/32204697/180778683-4fe417aa-a1f1-4fe1-a407-dff905856adc.PNG">
 
 ### Database
 Database file attached

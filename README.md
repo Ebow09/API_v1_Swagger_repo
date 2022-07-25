@@ -11,6 +11,7 @@ This could be extended (based on your business strategy) to:
 - allow permissions could be added for users of the system in the auth0 account
 - include blank fields (maybe 3) for future expansion 
 - to search by additional fields like firstname, surname etc
+- search fields should be indexed to improve response times
 
 ## Installation Requirements
 - PHP 8.0 
